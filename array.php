@@ -1371,8 +1371,5 @@ echo "</pre>";
 ?>
 </body>
 </html>
-<body>
-    hello world
-</body>
 
 
