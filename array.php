@@ -1363,6 +1363,13 @@ echo "<pre>";
 print_r(timezone_location_get($kk));
 echo "</pre>";
 
+$kkp = timezone_open("Asia/kolkata");
+echo timezone_name_get($kkp) ."<br>";
+
+echo "<pre>";
+print_r(timezone_location_get($kk));
+echo "</pre>";
+
 // echo"<pre>";
 // print_r(timezone_identifiers_list());
 // echo"</pre>";
