@@ -1,5 +1,5 @@
 <?php
-print_r($_POST);
+//print_r($_POST);
 if(isset($_POST['name'])){
     echo "user name is ". $_POST['name'];
     echo "<br>";
