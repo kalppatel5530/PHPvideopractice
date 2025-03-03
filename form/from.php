@@ -11,6 +11,8 @@ if(isset($_POST['name'])){
     echo "<br>";
     echo "user gender is ". $_POST['gender'];
     echo "<br>";
+    echo "user city is ". $_POST['city'];
+    echo "<br>";
     echo "user bio is ". $_POST['bio'];
     echo "<br>";
 }
