@@ -1,14 +1,16 @@
 <?php
 if(isset($_POST['submit'])){
     $val1= $_POST['name'];
-    $val2 =$_POST['password'];
+    $val2= $_POST['email'];
+    $val3= $_POST['add'];
+    $val4 =$_POST['password'];
+    
 
     echo "$val1 <br>" ;
-    echo "$val2";
+    echo "$val2 <br>";
+    echo "$val3 <br>" ;
+    echo "$val4 <br>";
 }
-
-
-
 ?>
 
 
@@ -26,8 +28,13 @@ if(isset($_POST['submit'])){
     <form class="" action="required.php" method="POST">
         Name: <input type="text" name="name" value="" required>
         <br>
+        Email: <input type="email"  name="email" value="" required>
+        <br>
+        Address: <input type="text" name="add" value="" required>
+        <br>
         Password: <input type="password" name="password" value="" required>
         <br>
+
         <input type="submit" name="submit">
 </body>
 
