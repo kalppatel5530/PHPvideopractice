@@ -27,15 +27,15 @@ if(isset($_POST['submit'])){
 
     <form class="" action="required.php" method="POST">
         Name: <input type="text" name="name" value="" required>
-        <br>
+        <br><br>
         Email: <input type="email"  name="email" value="" required>
-        <br>
+        <br><br>
         Address: <input type="text" name="add" value="" required>
-        <br>
+        <br><br>
         Password: <input type="password" name="password" value="" required>
-        <br>
-
-        <input type="submit" name="submit">
+        <br><br>
+         <input type="submit" name="submit">
+</form>
 </body>
 
 </html>
