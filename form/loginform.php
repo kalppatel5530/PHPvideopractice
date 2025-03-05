@@ -17,6 +17,20 @@ if(empty($username)){
     }
 }
 
+if(empty($password)){
+    $passworderror="</br> password is required";
+}else{
+    if(strlen($password) <= 8){
+        $passworderroe="<br>at least 8 digit";
+    }elseif(!preg_match("#[0-9]+3",$password)){
+        $passworderror ="<br> at least one digit";
+    } elseif(!preg_match("#[a-z]+3",$password)){
+        $passworderror ="<br> at least one small character";
+    }elseif(!preg_match("#[A-Z]+3",$password)){
+        $passworderror ="<br> at least one capital character";
+    }
+}
+
 }
 
 ?>
