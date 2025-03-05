@@ -7,26 +7,26 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
 if(empty($username)){
-    $nameerror = "name is required";
+    $nameerror = "<br>name is required";
 }else {
     $username = trim($username);
     $username = htmlspecialchars($username);
     if(!preg_match("/^[a-zA-Z]+$/", $username)){
-          $nameerror = "name should only required char ans sapces";
+          $nameerror = "name should only required char and sapces";
     }
 }
 
-if(empty($password)){
-    $passworderror="</br> password is required";
-}else{
-    if(strlen($password) <= 8){
-        $passworderroe="<br>at least 8 digit";
-    }elseif(!preg_match("#[0-9]+#",$password)){
-        $passworderror ="<br> at least one digit";
-    } elseif(!preg_match("#[a-z]+#",$password)){
-        $passworderror ="<br> at least one small character";
-    }elseif(!preg_match("#[A-Z]+#",$password)){
-        $passworderror ="<br> at least one capital character";
+if (empty($password)) {
+    $passworderror = "<br>Password is required";
+} else {
+    if (strlen($password) < 8) {
+        $passworderror = "<br>At least 8 characters required";
+    } elseif (!preg_match("#\d+#", $password)) {
+        $passworderror = "<br>At least one digit required";
+    } elseif (!preg_match("#[a-z]+#", $password)) {
+        $passworderror = "<br>At least one lowercase letter required";
+    } elseif (!preg_match("#[A-Z]+#", $password)) {
+        $passworderror = "<br>At least one uppercase letter required";
     }
 }
 
@@ -63,11 +63,11 @@ if(empty($password)){
 
     <?php
 
-// if(isset($_POST['username'])){
-//     echo "username is " . $_POST["username"];
-//     echo "<br>";
-//      echo "password is " .$_POST["password"];
-// }
+if(isset($_POST['username']) && empty($passworderror)){
+    echo "username is " . $_POST["username"];
+    echo "<br>";
+     echo "password is " .$_POST["password"];
+}
 
 ?> 
 </body>
