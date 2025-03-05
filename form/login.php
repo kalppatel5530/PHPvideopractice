@@ -63,7 +63,7 @@ if (empty($password)) {
 
     <?php
 
-if(isset($_POST['username']) && empty($passworderror)){
+if(isset($_POST['username']) && empty($nameerror) && empty($passworderror)){
     echo "username is " . $_POST["username"];
     echo "<br>";
      echo "password is " .$_POST["password"];
