@@ -3,116 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Handling</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #e3f2fd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .form-container {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            width: 350px;
-        }
-        .form-container input,
-        .form-container select,
-        .form-container textarea,
-        .form-container button {
-            width: 100%;
-            margin-bottom: 12px;
-            padding: 10px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 15px;
-        }
-        .form-container button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background 0.3s ease-in-out;
-        }
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-        .checkbox-group, .radio-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 12px;
-        }
-        .checkbox-group label, .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-        .checkbox-group input, .radio-group input {
-            margin: 0;
-            width: 16px;
-            height: 16px;
-        }
-        .form-container textarea {
-            resize: vertical;
-            height: 80px;
-        }
-        select {
-            appearance: none;
-            background: #ffffff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>') no-repeat right 10px center;
-            background-size: 16px;
-        }
-    </style>
+    <title>Login</title>
 </head>
 <body>
-    <div class="form-container">
-        <form action="from.php" method="post">
-            <input type="text" name="name" placeholder="Enter your name" required>
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <input type="password" name="password" placeholder="Enter your password" required>
-            
-            <fieldset>
-                <legend>Skills</legend>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="skills[]" value="PHP"> PHP</label>
-                    <label><input type="checkbox" name="skills[]" value="JAVA"> JAVA</label>
-                    <label><input type="checkbox" name="skills[]" value="React"> React</label>
-                    <label><input type="checkbox" name="skills[]" value="Dotnet"> Dotnet</label>
-                    <label><input type="checkbox" name="skills[]" value="C"> C </label>
-                    <label><input type="checkbox" name="skills[]" value="React">React</label>
-                </div>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Gender</legend>
-                <div class="radio-group">
-                    <label><input type="radio" name="gender" value="Male" required> Male</label>
-                    <label><input type="radio" name="gender" value="Female"> Female</label>
-                    <label><input type="radio" name="gender" value="Other"> Other</label>
-                </div>
-            </fieldset>
-            <br>
-            <select name="city" required>
-                <option value="">Select your city</option>
-                <option value="Himmatnagar">Himmatnagar</option>
-                <option value="Ahmedabad">Ahmedabad</option>
-                <option value="Gandhinagar">Gandhinagar</option>
-                <option value="Surat">Surat</option>
-                <option value="Baroda">Baroda</option>
-            </select>
-            
-            <textarea name="bio" placeholder="Tell us about yourself..."></textarea>
-            
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
+
+    <h2>Login</h2>
+    <form action="from.php" method="post">
+        <label>Username:</label>
+        <input type="text" name="username" required>
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
 </body>
 </html>
