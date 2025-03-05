@@ -9,23 +9,24 @@ if(isset($_POST['submit'])){
 
 if(empty($username)){
     $nameerror = "name is required";
+}else {
+    $username = trim($username);
+    $username = htmlspecialchars($username);
+    if(!preg_match("/^[a-zA-Z]+$/", $username)){
+          $nameerror = "name should only required char ans sapces";
+    }
 }
 
 }
 
 ?>
 
-
-
-
-
 <?php
-//print_r($_POST);
+
 if(isset($_POST['username'])){
-    echo "user name is ". $_POST['username'];
+    echo "username is " . $_POST["username"];
     echo "<br>";
-    echo "user password is ". $_POST['password'];
-    echo "<br>";
+     echo "password is " .$_POST["password"];
 }
 
 ?>
