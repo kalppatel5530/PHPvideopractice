@@ -16,11 +16,11 @@ if(isset($_POST['submit'])){
 
 
 if(empty($name)){
-    $nameerror="name is required";
+    $nameerror="<br>name is required";
 }else{
     $name= trim($name);
     $name=htmlspecialchars($name);
-    if(!preg_match("/^[a-zA-Z]+$/",$name)){
+    if(!preg_match("/^[a-zA-Z\s]+$/",$name)){
         // $nameerror="name should required only char and spaces";
     }
 }
@@ -88,11 +88,12 @@ if (empty($password)) {
     <input type="password" name="password">
     <span style="color:red;"><?php echo $passworderror ?></span>
     <br><br>
-    <input type="submit" name="submit">
-</Form>
+    <input type="submit" name="submit" value="register">
+</form>
 <?php
 
-if(isset($_POST['name']) &&empty($nameerror) &&empty($emailerror) &&empty($phoneerror) &&empty($passworderror)){
+if (isset($_POST['submit']) && empty($nameerror) && empty($emailerror) && empty($phoneerror) && empty($passworderror)) { 
+
     echo "name is " .$_POST['name'];
     echo "<br>";
     echo "email is " .$_POST['email'];
