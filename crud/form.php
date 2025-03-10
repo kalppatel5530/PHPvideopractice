@@ -31,18 +31,20 @@
 </div>
 <div class="input_field">
         <label>Gender</label>
-        <select class="selectbox">
+        <div class="custom_select">
+        <select>
        <option>Select</option>
        <option>Male</option>
        <option>Female</option>
 </select>
 </div>
+</div>
 <div class="input_field">
-        <label>Email</label>
+        <label>Email Address</label>
         <input type="text" class="input">
 </div>
 <div class="input_field">
-        <label>Phone no.</label>
+        <label>Phone Number</label>
         <input type="text" class="input">
 </div>
 <div class="input_field">
@@ -57,7 +59,7 @@
        <p>Agree to terms and conditions</p>
 </div>
 <div class="input_field">
-    <input type="submit" value="register" class="btn">
+    <input type="submit" value="Register" class="btn">
 </div>
 </div>
 </div>
