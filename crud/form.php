@@ -86,8 +86,10 @@ if($_POST["register"]){
 
     if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $address !=""){
 
-  $query="INSERT INTO registration values('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$address')";
+  $query="INSERT INTO registration(first_name , last_name , password, confirm_password, gender, email, phone, address) values('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$address')";
+
 $data= mysqli_query($conn , $query);
+
 
 if($data)
 {
@@ -96,7 +98,7 @@ if($data)
     echo "data is not inserted succesfully";
 }
 }else{
-    echo "<script>alert('please fill the form');</script>";
+    echo "error";
 }
 }
 
