@@ -8,6 +8,30 @@
             table{
                 background-color: white;
             }
+            .update 
+            {
+                background-color:green;
+                color:white;
+                border:0;
+                outline: none;
+                border-radius:5px;
+                height:22px;
+                width:80px;
+                font-weight:bold;
+                cursor:pointer;
+            }
+            .delete 
+            {
+                background-color:red;
+                color:white;
+                border:0;
+                outline: none;
+                border-radius:5px;
+                height:22px;
+                width:80px;
+                font-weight:bold;
+                cursor:pointer;
+            }
         </style>
     </head>
     </html>
@@ -30,25 +54,32 @@ if($total != 0)
 {
     ?>
     <h2 align="center"><mark>Displaying all records</mark></h2>
-<table border="1" cellspacing="7" width="85%" align="center">
+<table border="1" cellspacing="8" width="97%" align="center">
     <tr>
-    <th width="10%">First name</th>
-    <th width="10%">Last name</th>
+    <th width="5%">ID</th>
+    <th width="8%">First name</th>
+    <th width="8%">Last name</th>
     <th width="10%">gender</th>
     <th width="20%">email</th>
     <th width="10%">phone</th>
-    <th width="25%">address</th>
+    <th width="24%">address</th>
+    <th width="12%">Operation</th>
 </tr>
 
     <?php
 while($result= mysqli_fetch_assoc($data)){
 echo " <tr>
+    <td>".$result['id']."</td>
     <td>".$result['first_name']."</td>
     <td>".$result['last_name']."</td>
     <td>".$result['gender']."</td>
     <td>".$result['email']."</td>
     <td>".$result['phone']."</td>
     <td>".$result['address']."</td>
+
+    <td><a href='update_design.php?id=$result[id]'><input type='submit' value='update' class='update'></a>
+
+    <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete'></a></td>
 </tr>";
 
    
