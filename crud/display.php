@@ -54,7 +54,7 @@ if($total != 0)
 {
     ?>
     <h2 align="center"><mark>Displaying all records</mark></h2>
-<table border="1" cellspacing="8" width="97%" align="center">
+<table border="1" cellspacing="8" width="100%" align="center">
     <tr>
     <th width="5%">ID</th>
     <th width="8%">First name</th>
@@ -62,7 +62,9 @@ if($total != 0)
     <th width="10%">gender</th>
     <th width="20%">email</th>
     <th width="10%">phone</th>
-    <th width="24%">address</th>
+    <th width="5%">Caste</th>
+    <th width="5%">Language</th>
+    <th width="22%">address</th>
     <th width="12%">Operation</th>
 </tr>
 
@@ -75,11 +77,13 @@ echo " <tr>
     <td>".$result['gender']."</td>
     <td>".$result['email']."</td>
     <td>".$result['phone']."</td>
+    <td>".$result['caste']."</td>
+     <td>".$result['language']."</td>
     <td>".$result['address']."</td>
 
     <td><a href='update_design.php?id=$result[id]'><input type='submit' value='update' class='update'></a>
 
-    <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete'></a></td>
+    <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick = 'return checkdelete()'></a></td>
 </tr>";
 
    
@@ -89,4 +93,11 @@ echo " <tr>
 }
 ?>
 </table>
+<script>
+    function checkdelete()
+    {
+        return confirm('Are you sure to want to delete this record ?');
+    }
+
+    </script>
 </html>  

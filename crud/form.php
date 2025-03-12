@@ -49,6 +49,20 @@
         <input type="text" class="input" name="phone" required>
 </div>
 <div class="input_field">
+        <label style="margin-right:100px;">Caste</label>
+        <input type="radio" name="caste" value="General" required><label style="margin-left:5px;">General</label>
+        <input type="radio" name="caste" value="OBC" required><label style="margin-left:5px;">OBC</label>
+        <input type="radio" name="caste" value="SC" required><label style="margin-left:5px;">SC</label>
+        <input type="radio" name="caste" value="ST" required><label style="margin-left:5px;">ST</label>
+</div>
+<div class="input_field">
+        <label style="margin-right:91px;">Language</label>
+        <input type="checkbox" name="language[]" value="English"><label style="margin-left:5px;">English</label>
+        <input type="checkbox" name="language[]" value="Hindi"><label style="margin-left:5px;">Hindi</label>
+        <input type="checkbox" name="language[]" value="Gujarati"><label style="margin-left:5px;">Gujarati</label>
+        <input type="checkbox" name="language[]" value="Spanish"><label style="margin-left:5px;">Spanish</label>
+</div>
+<div class="input_field">
         <label>Address</label>
         <textarea class="textarea" name="address" required></textarea>
 </div>
@@ -82,13 +96,17 @@ if($_POST["register"]){
     $gender= $_POST['gender'];
     $email= $_POST['email'];
     $phone= $_POST['phone'];
+    $caste = $_POST['caste'];
+    $language = $_POST['language'];
     $address= $_POST['address'];
 
-    if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $address !=""){
+    $lang = implode(",",$language);
+   
+    if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $caste !="" && $language !="" && $address !=""){
 
-  $query="INSERT INTO registration(first_name , last_name , password, confirm_password, gender, email, phone, address) values('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$address')";
+  $query="INSERT INTO registration(first_name , last_name , password, confirm_password, gender, email, phone, caste,language, address) values('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$caste','$lang','$address')";
 
-$data= mysqli_query($conn , $query);
+$data= mysqli_query($conn , $query); 
 
 
 if($data)
