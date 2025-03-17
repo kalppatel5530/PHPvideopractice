@@ -57,6 +57,7 @@ if($total != 0)
 <table border="1" cellspacing="8" width="100%" align="center">
     <tr>
     <th width="5%">ID</th>
+    <th width="5%">Image</th>
     <th width="8%">First name</th>
     <th width="8%">Last name</th>
     <th width="10%">gender</th>
@@ -72,6 +73,9 @@ if($total != 0)
 while($result= mysqli_fetch_assoc($data)){
 echo " <tr>
     <td>".$result['id']."</td>
+
+    <td><img src = '".$result['std_img']."' height='100px' width='100px'></td>
+
     <td>".$result['first_name']."</td>
     <td>".$result['last_name']."</td>
     <td>".$result['gender']."</td>

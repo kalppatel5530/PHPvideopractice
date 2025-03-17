@@ -8,12 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
         <div class="title">
             Registration Form
 </div>
 
 <div class="form">
+<div class="input_field" >
+        <label>Upload Image</label>
+        <input type="file" name="uploadfile" style="width: 100%;">
+</div>
+
     <div class="input_field">
         <label>First Name</label>
         <input type="text" class="input" name="fname" required>
@@ -89,6 +94,14 @@ include("connection.php");
 error_reporting(0);
 
 if($_POST["register"]){
+
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "images/".$filename;
+        
+        move_uploaded_file($tempname , $folder);
+
+
     $fname= $_POST['fname'];
     $lname= $_POST['lname'];
     $password= $_POST['password'];
@@ -104,16 +117,16 @@ if($_POST["register"]){
    
     if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $caste !="" && $language !="" && $address !=""){
 
-  $query="INSERT INTO registration(first_name , last_name , password, confirm_password, gender, email, phone, caste,language, address) values('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$caste','$lang','$address')";
+  $query="INSERT INTO registration(std_img,first_name , last_name , password, confirm_password, gender, email, phone, caste,language, address) values(' $folder','$fname','$lname','$password','$conpassword','$gender','$email','$phone','$caste','$lang','$address')";
 
 $data= mysqli_query($conn , $query); 
 
 
 if($data)
 {
-    echo "data inserted succesfully";
+    echo "<script>alert('Data inserted succesfully')</script>";
 }else{
-    echo "data is not inserted succesfully";
+        echo "<script>alert('Failed')</script>";
 }
 }else{
     echo "error";
