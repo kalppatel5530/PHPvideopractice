@@ -5,14 +5,14 @@ echo "<br>";
 
 $query = "select * from kkp";
 
-$result = $conn ->query($query);
+$result = $conn -> query($query);
 
-if($result -> num_rows>0){
-    while($rows =$result -> fetch_assoc()){
-        echo $rows['name'] . " - " . $rows['age'] . " - " . $rows['phone'] . "<br>";
-    } 
+if($result -> num_rows > 0){
+    while($rows = $result -> fetch_assoc()){
+        echo $rows['name'] . " - " . $rows['age'] . " - " .$rows['phone'] . "<br>";
+    }
 }else{
-    echo "record not found";
+    echo "record is not found";
 }
 
 $conn -> close();
